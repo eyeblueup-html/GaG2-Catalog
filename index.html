@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grow a Garden 2 - Seed Catalog</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI,Arial,sans-serif;
+}
+
+body{
+    background:#0f1117;
+    color:white;
+    line-height:1.6;
+}
+
+header{
+    padding:60px 20px;
+    text-align:center;
+    background:linear-gradient(135deg,#0d3b1e,#1d7f41);
+}
+
+header h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+header p{
+    opacity:.8;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:30px 20px;
+}
+
+.search{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    margin-bottom:20px;
+    background:#1a1d26;
+    color:white;
+    font-size:16px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    overflow:hidden;
+    border-radius:15px;
+}
+
+th{
+    background:#1e8d49;
+}
+
+th,td{
+    padding:14px;
+    text-align:left;
+}
+
+tr:nth-child(even){
+    background:#171b24;
+}
+
+tr:nth-child(odd){
+    background:#11151d;
+}
+
+.card{
+    background:#171b24;
+    padding:25px;
+    border-radius:15px;
+    margin-top:30px;
+}
+
+.card h2{
+    margin-bottom:15px;
+    color:#55ff88;
+}
+
+.strategy{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.strategy-box{
+    background:#11151d;
+    padding:20px;
+    border-radius:12px;
+    border:1px solid #2a2f3a;
+}
+
+.strategy-box h3{
+    color:#55ff88;
+    margin-bottom:10px;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    opacity:.7;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>🌱 Grow a Garden 2</h1>
+    <p>Master Seed & Plant Catalog</p>
+</header>
+
+<div class="container">
+
+<input type="text" class="search" id="search"
+placeholder="Search plants...">
+
+<table id="catalog">
+<thead>
+<tr>
+<th>Plant</th>
+<th>Cost</th>
+<th>Base Value</th>
+<th>Harvest</th>
+<th>Availability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mushroom</td>
+<td>15,000</td>
+<td>11,732</td>
+<td>Single</td>
+<td>Rare Rotation</td>
+</tr>
+
+<tr>
+<td>Moon Bloom</td>
+<td>65,000,000</td>
+<td>8,122</td>
+<td>TBA</td>
+<td>Ultra Rare</td>
+</tr>
+
+<tr>
+<td>Dragon's Breath</td>
+<td>Event / Pack</td>
+<td>3,068</td>
+<td>Single</td>
+<td>Pack Exclusive</td>
+</tr>
+
+<tr>
+<td>Ghost Pepper</td>
+<td>Pack RNG</td>
+<td>2,256</td>
+<td>Multi</td>
+<td>Mythic Pack</td>
+</tr>
+
+<tr>
+<td>Green Bean</td>
+<td>20,000</td>
+<td>85</td>
+<td>Multi</td>
+<td>Uncommon</td>
+</tr>
+
+<tr>
+<td>Pineapple</td>
+<td>10,000</td>
+<td>60</td>
+<td>Multi</td>
+<td>Common</td>
+</tr>
+
+<tr>
+<td>Cactus</td>
+<td>5,000</td>
+<td>50</td>
+<td>Multi</td>
+<td>Common</td>
+</tr>
+
+<tr>
+<td>Corn</td>
+<td>2,500</td>
+<td>45</td>
+<td>Single</td>
+<td>Common</td>
+</tr>
+
+<tr>
+<td>Bamboo</td>
+<td>700</td>
+<td>35</td>
+<td>Single</td>
+<td>Starter</td>
+</tr>
+
+<tr>
+<td>Strawberry</td>
+<td>Shop Rotation</td>
+<td>40</td>
+<td>Multi</td>
+<td>Frequent</td>
+</tr>
+
+<tr>
+<td>Blueberry</td>
+<td>Shop Rotation</td>
+<td>30</td>
+<td>Multi (2-3)</td>
+<td>Frequent</td>
+</tr>
+
+<tr>
+<td>Carrot</td>
+<td>Starter</td>
+<td>15</td>
+<td>Single</td>
+<td>Tutorial Crop</td>
+</tr>
+</tbody>
+</table>
+
+<div class="card">
+<h2>💰 Economy Formula</h2>
+<p>
+Your payout scales heavily with weight:
+</p>
+<br>
+<p>
+<b>Value ∝ Weight²·⁶⁵</b>
+</p>
+<br>
+<p>
+Weather mutations like Frozen and Stardust can massively increase profits.
+</p>
+</div>
+
+<div class="card">
+<h2>🏆 Best Farming Strategies</h2>
+
+<div class="strategy">
+
+<div class="strategy-box">
+<h3>Early Game</h3>
+<p>
+Start with Carrots and move into Bamboo.
+Wait for mutation weather events before selling.
+</p>
+</div>
+
+<div class="strategy-box">
+<h3>Passive Income</h3>
+<p>
+Use Ghost Pepper, Pineapple, and Cactus.
+Protect farms with walls and traps.
+</p>
+</div>
+
+<div class="strategy-box">
+<h3>Highest Value</h3>
+<p>
+Mushroom and Moon Bloom provide the best raw value if your farm is secure.
+</p>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<footer>
+Grow a Garden 2 Community Guide
+</footer>
+
+<script>
+const search = document.getElementById("search");
+
+search.addEventListener("keyup", function(){
+    const filter = this.value.toLowerCase();
+    const rows = document.querySelectorAll("#catalog tbody tr");
+
+    rows.forEach(row=>{
+        row.style.display =
+        row.textContent.toLowerCase().includes(filter)
+        ? ""
+        : "none";
+    });
+});
+</script>
+
+</body>
+</html>
