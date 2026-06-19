@@ -179,27 +179,46 @@ Bamboo<br>700 / 35<br><span class="badge">Rare</span>
 <div id="secretPanel">
 
     <div class="box">
-        <h3>Copy Box 1</h3>
-        <textarea id="box1">Example notes here</textarea>
+        <h3>Best Automation Script (Auto Harvest, Auto Buy, Auto Sell, Auto Water/Sprinkler, Macro, Auto Seed Event.)</h3>
+        <textarea id="box1">loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/97c3f6db55a2cf72141537a85458e5a7.lua"))()</textarea>
         <button onclick="copy('box1')">Copy</button>
     </div>
 
     <div class="box">
-        <h3>Copy Box 2</h3>
-        <textarea id="box2">More notes here</textarea>
+        <h3>Hand-Made Infinite Harvest Reach and Auto Harvest Script (WARNING: Causes Much Lag To Reduce Lag Create A Greater "task.wait(#)")</h3>
+        <textarea id="box2">local Workspace = game:GetService("Workspace")
+-- Increase this # v to reduce lag.    
+while task.wait(0.001) do 
+    for _, obj in ipairs(Workspace:GetDescendants()) do
+        if obj:IsA("ProximityPrompt") then
+            -- Lowercase the text to prevent capitalization mismatch issues
+            local actionText = string.lower(obj.ActionText)
+            local objectText = string.lower(obj.ObjectText)
+            
+            -- Checks if the prompt is related to harvesting or picking crops
+            if string.find(actionText, "Harvest") or string.find(actionText, "harvest") or string.find(actionText, "collect") or string.find(objectText, "plant") then
+                
+                -- Note: If the server uses exploit protection, changing these properties may not bypass server-side checks.
+                obj.HoldDuration = 0 
+                obj.MaxActivationDistance = math.huge 
+
+                -- Fire the prompt
+                fireproximityprompt(obj,1000)
+            end
+        end
+    end
+end
+</textarea>
         <button onclick="copy('box2')">Copy</button>
     </div>
 
     <div class="box">
         <h3>Downloads</h3>
 
-        <button onclick="download('guide.txt','Grow a Garden 2 Guide')">
-            Download Guide
-        </button>
-
-        <button onclick="download('strategy.txt','Best Farming Strategy')">
-            Download Strategy
-        </button>
+        <href="https://drive.google.com/file/d/1zLbA1t4UUx0Hr99kcr7h9M_chd1QKCI0/view?usp=sharing" download>>
+            Download Injector (XENO)
+        </href>
+        <h3>Make sure you unzip it before trying to launch it. (Sometimes the injector May not be available in the correct version if its not try first updating roblox or downloading it through their discord be carful though that can be dangerous. Discord Link: https://discord.gg/xe-no)</h3>
 
     </div>
 
