@@ -8,16 +8,15 @@
 <style>
 body{
     margin:0;
-    font-family:Arial, sans-serif;
+    font-family:Arial;
     background:#0b0f14;
     color:white;
 }
 
-/* HERO */
 .hero{
     height:420px;
     background:
-        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
         url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6");
     background-size:cover;
     background-position:center;
@@ -25,88 +24,82 @@ body{
     align-items:center;
     justify-content:center;
     text-align:center;
-    padding:20px;
 }
 
-.hero h1{
-    font-size:3rem;
-    margin:0;
-}
+.hero h1{font-size:3rem;margin:0;}
 
-.hero p{
-    opacity:0.8;
-}
+.container{max-width:1100px;margin:auto;padding:20px;}
 
-/* CONTAINER */
-.container{
-    max-width:1100px;
-    margin:auto;
-    padding:20px;
-}
-
-/* SEARCH */
-input{
-    width:100%;
-    padding:15px;
+input, select{
+    padding:12px;
     border:none;
     border-radius:10px;
-    margin:20px 0;
     background:#141a22;
     color:white;
-    font-size:16px;
+    margin:5px;
 }
 
-/* GRID */
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:15px;
+    margin-top:20px;
 }
 
-/* CARD */
 .card{
     background:#141a22;
     padding:15px;
     border-radius:12px;
-    transition:0.2s;
-    border:1px solid #222b38;
+    border:1px solid #222;
 }
 
 .card:hover{
-    transform:scale(1.03);
     border-color:#3cff8f;
 }
 
-.card h3{
-    margin:0 0 5px 0;
-    color:#3cff8f;
-}
-
 .badge{
-    display:inline-block;
-    padding:3px 8px;
     font-size:12px;
+    padding:3px 6px;
     background:#2a3442;
     border-radius:5px;
-    margin-top:5px;
 }
 
-/* SECTION */
 .section{
-    margin-top:40px;
-    padding:20px;
+    margin-top:30px;
+    padding:15px;
     background:#111823;
     border-radius:12px;
 }
 
-.section h2{
-    color:#3cff8f;
+/* SECRET */
+#secretPanel{
+    display:none;
+    margin-top:20px;
 }
 
-footer{
-    text-align:center;
-    padding:30px;
-    opacity:0.6;
+.box{
+    background:#141a22;
+    padding:12px;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+
+textarea{
+    width:100%;
+    background:#0b0f14;
+    color:white;
+    border:none;
+    padding:10px;
+    border-radius:10px;
+}
+
+button{
+    padding:10px;
+    border:none;
+    border-radius:10px;
+    background:#3cff8f;
+    cursor:pointer;
+    margin-top:5px;
 }
 </style>
 </head>
@@ -115,94 +108,164 @@ footer{
 
 <div class="hero">
     <div>
-        <h1>🌱 Grow a Garden 2</h1>
-        <p>Seed Catalog • Values • Strategy Guide</p>
+        <h1>🌱 Grow a Garden 2 Wiki</h1>
+        <p>Plants • Filters • Strategy • Tools</p>
     </div>
 </div>
 
 <div class="container">
 
+<!-- SEARCH + FILTERS -->
 <input id="search" placeholder="Search plants...">
 
-<div class="grid" id="plantGrid">
+<select id="rarity">
+    <option value="all">All Rarities</option>
+    <option value="common">Common</option>
+    <option value="rare">Rare</option>
+    <option value="mythic">Mythic</option>
+    <option value="ultra">Ultra Rare</option>
+</select>
 
-<div class="card">
-<h3>Mushroom</h3>
-<p>Cost: 15,000</p>
-<p>Value: 11,732</p>
-<span class="badge">Rare</span>
+<select id="type">
+    <option value="all">All Types</option>
+    <option value="single">Single</option>
+    <option value="multi">Multi</option>
+</select>
+
+<!-- PLANTS -->
+<div class="grid" id="grid">
+
+<div class="card" data-rarity="rare" data-type="single">
+Mushroom<br>15,000 / 11,732<br><span class="badge">Rare</span>
 </div>
 
-<div class="card">
-<h3>Moon Bloom</h3>
-<p>Cost: 65,000,000</p>
-<p>Value: 8,122</p>
-<span class="badge">Ultra Rare</span>
+<div class="card" data-rarity="ultra" data-type="single">
+Moon Bloom<br>65,000,000 / 8,122<br><span class="badge">Ultra Rare</span>
 </div>
 
-<div class="card">
-<h3>Ghost Pepper</h3>
-<p>Cost: Pack RNG</p>
-<p>Value: 2,256</p>
-<span class="badge">Mythic</span>
+<div class="card" data-rarity="mythic" data-type="multi">
+Ghost Pepper<br>Pack RNG<br><span class="badge">Mythic</span>
 </div>
 
-<div class="card">
-<h3>Pineapple</h3>
-<p>Cost: 10,000</p>
-<p>Value: 60</p>
-<span class="badge">Common</span>
+<div class="card" data-rarity="common" data-type="multi">
+Pineapple<br>10,000 / 60<br><span class="badge">Common</span>
 </div>
 
-<div class="card">
-<h3>Cactus</h3>
-<p>Cost: 5,000</p>
-<p>Value: 50</p>
-<span class="badge">Common</span>
+<div class="card" data-rarity="common" data-type="multi">
+Cactus<br>5,000 / 50<br><span class="badge">Common</span>
 </div>
 
-<div class="card">
-<h3>Corn</h3>
-<p>Cost: 2,500</p>
-<p>Value: 45</p>
-<span class="badge">Common</span>
+<div class="card" data-rarity="common" data-type="single">
+Corn<br>2,500 / 45<br><span class="badge">Common</span>
+</div>
+
+<div class="card" data-rarity="common" data-type="multi">
+Blueberry<br>Rotation / 30<br><span class="badge">Common</span>
+</div>
+
+<div class="card" data-rarity="rare" data-type="single">
+Bamboo<br>700 / 35<br><span class="badge">Rare</span>
 </div>
 
 </div>
 
+<!-- SECRET AREA -->
 <div class="section">
-<h2>💰 Economy Formula</h2>
-<p>Value scales using: <b>Weight²·⁶⁵</b></p>
-<p>Weather mutations can massively increase profits.</p>
+<h2>🔒 Secret Panel</h2>
+
+<input id="code" placeholder="Enter 6-digit code">
+<button onclick="unlock()">Unlock</button>
+
+<div id="secretPanel">
+
+    <div class="box">
+        <h3>Copy Box 1</h3>
+        <textarea id="box1">Example notes here</textarea>
+        <button onclick="copy('box1')">Copy</button>
+    </div>
+
+    <div class="box">
+        <h3>Copy Box 2</h3>
+        <textarea id="box2">More notes here</textarea>
+        <button onclick="copy('box2')">Copy</button>
+    </div>
+
+    <div class="box">
+        <h3>Downloads</h3>
+
+        <button onclick="download('guide.txt','Grow a Garden 2 Guide')">
+            Download Guide
+        </button>
+
+        <button onclick="download('strategy.txt','Best Farming Strategy')">
+            Download Strategy
+        </button>
+
+    </div>
+
+</div>
 </div>
 
-<div class="section">
-<h2>🏆 Strategy</h2>
-<p><b>Early Game:</b> Carrots → Bamboo</p>
-<p><b>Mid Game:</b> Multi-harvest crops</p>
-<p><b>Late Game:</b> Mushroom / Moon Bloom</p>
 </div>
-
-</div>
-
-<footer>
-Grow a Garden 2 Wiki • Fan Made
-</footer>
 
 <script>
+
+// SEARCH + FILTER
 const search = document.getElementById("search");
+const rarity = document.getElementById("rarity");
+const type = document.getElementById("type");
 const cards = document.querySelectorAll(".card");
 
-search.addEventListener("input", () => {
-    let value = search.value.toLowerCase();
+function update(){
+    let s = search.value.toLowerCase();
+    let r = rarity.value;
+    let t = type.value;
 
-    cards.forEach(card => {
-        card.style.display =
-        card.innerText.toLowerCase().includes(value)
-        ? "block"
-        : "none";
+    cards.forEach(c=>{
+        let text = c.innerText.toLowerCase();
+        let rr = c.dataset.rarity;
+        let tt = c.dataset.type;
+
+        let show =
+            text.includes(s) &&
+            (r==="all" || r===rr) &&
+            (t==="all" || t===tt);
+
+        c.style.display = show ? "block":"none";
     });
-});
+}
+
+search.oninput = update;
+rarity.onchange = update;
+type.onchange = update;
+
+// SECRET CODE
+function unlock(){
+    if(document.getElementById("code").value === "086495"){
+        document.getElementById("secretPanel").style.display="block";
+        alert("Unlocked");
+    } else {
+        alert("Wrong code");
+    }
+}
+
+// COPY
+function copy(id){
+    let t = document.getElementById(id);
+    t.select();
+    document.execCommand("copy");
+}
+
+// DOWNLOAD
+function download(name, text){
+    let blob = new Blob([text], {type:"text/plain"});
+    let url = URL.createObjectURL(blob);
+    let a = document.createElement("a");
+    a.href = url;
+    a.download = name;
+    a.click();
+}
+
 </script>
 
 </body>
