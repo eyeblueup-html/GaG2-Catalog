@@ -3,299 +3,203 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grow a Garden 2 - Seed Catalog</title>
+<title>Grow a Garden 2 Wiki</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Segoe UI,Arial,sans-serif;
-}
-
 body{
-    background:#0f1117;
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#0b0f14;
     color:white;
-    line-height:1.6;
 }
 
-header{
-    padding:60px 20px;
+/* HERO */
+.hero{
+    height:420px;
+    background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     text-align:center;
-    background:linear-gradient(135deg,#0d3b1e,#1d7f41);
+    padding:20px;
 }
 
-header h1{
+.hero h1{
     font-size:3rem;
-    margin-bottom:10px;
+    margin:0;
 }
 
-header p{
-    opacity:.8;
+.hero p{
+    opacity:0.8;
 }
 
+/* CONTAINER */
 .container{
-    max-width:1200px;
+    max-width:1100px;
     margin:auto;
-    padding:30px 20px;
+    padding:20px;
 }
 
-.search{
+/* SEARCH */
+input{
     width:100%;
     padding:15px;
     border:none;
     border-radius:10px;
-    margin-bottom:20px;
-    background:#1a1d26;
+    margin:20px 0;
+    background:#141a22;
     color:white;
     font-size:16px;
 }
 
-table{
-    width:100%;
-    border-collapse:collapse;
-    overflow:hidden;
-    border-radius:15px;
-}
-
-th{
-    background:#1e8d49;
-}
-
-th,td{
-    padding:14px;
-    text-align:left;
-}
-
-tr:nth-child(even){
-    background:#171b24;
-}
-
-tr:nth-child(odd){
-    background:#11151d;
-}
-
-.card{
-    background:#171b24;
-    padding:25px;
-    border-radius:15px;
-    margin-top:30px;
-}
-
-.card h2{
-    margin-bottom:15px;
-    color:#55ff88;
-}
-
-.strategy{
+/* GRID */
+.grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
 }
 
-.strategy-box{
-    background:#11151d;
-    padding:20px;
+/* CARD */
+.card{
+    background:#141a22;
+    padding:15px;
     border-radius:12px;
-    border:1px solid #2a2f3a;
+    transition:0.2s;
+    border:1px solid #222b38;
 }
 
-.strategy-box h3{
-    color:#55ff88;
-    margin-bottom:10px;
+.card:hover{
+    transform:scale(1.03);
+    border-color:#3cff8f;
+}
+
+.card h3{
+    margin:0 0 5px 0;
+    color:#3cff8f;
+}
+
+.badge{
+    display:inline-block;
+    padding:3px 8px;
+    font-size:12px;
+    background:#2a3442;
+    border-radius:5px;
+    margin-top:5px;
+}
+
+/* SECTION */
+.section{
+    margin-top:40px;
+    padding:20px;
+    background:#111823;
+    border-radius:12px;
+}
+
+.section h2{
+    color:#3cff8f;
 }
 
 footer{
     text-align:center;
     padding:30px;
-    opacity:.7;
+    opacity:0.6;
 }
 </style>
 </head>
+
 <body>
 
-<header>
-    <h1>🌱 Grow a Garden 2</h1>
-    <p>Master Seed & Plant Catalog</p>
-</header>
+<div class="hero">
+    <div>
+        <h1>🌱 Grow a Garden 2</h1>
+        <p>Seed Catalog • Values • Strategy Guide</p>
+    </div>
+</div>
 
 <div class="container">
 
-<input type="text" class="search" id="search"
-placeholder="Search plants...">
+<input id="search" placeholder="Search plants...">
 
-<table id="catalog">
-<thead>
-<tr>
-<th>Plant</th>
-<th>Cost</th>
-<th>Base Value</th>
-<th>Harvest</th>
-<th>Availability</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Mushroom</td>
-<td>15,000</td>
-<td>11,732</td>
-<td>Single</td>
-<td>Rare Rotation</td>
-</tr>
-
-<tr>
-<td>Moon Bloom</td>
-<td>65,000,000</td>
-<td>8,122</td>
-<td>TBA</td>
-<td>Ultra Rare</td>
-</tr>
-
-<tr>
-<td>Dragon's Breath</td>
-<td>Event / Pack</td>
-<td>3,068</td>
-<td>Single</td>
-<td>Pack Exclusive</td>
-</tr>
-
-<tr>
-<td>Ghost Pepper</td>
-<td>Pack RNG</td>
-<td>2,256</td>
-<td>Multi</td>
-<td>Mythic Pack</td>
-</tr>
-
-<tr>
-<td>Green Bean</td>
-<td>20,000</td>
-<td>85</td>
-<td>Multi</td>
-<td>Uncommon</td>
-</tr>
-
-<tr>
-<td>Pineapple</td>
-<td>10,000</td>
-<td>60</td>
-<td>Multi</td>
-<td>Common</td>
-</tr>
-
-<tr>
-<td>Cactus</td>
-<td>5,000</td>
-<td>50</td>
-<td>Multi</td>
-<td>Common</td>
-</tr>
-
-<tr>
-<td>Corn</td>
-<td>2,500</td>
-<td>45</td>
-<td>Single</td>
-<td>Common</td>
-</tr>
-
-<tr>
-<td>Bamboo</td>
-<td>700</td>
-<td>35</td>
-<td>Single</td>
-<td>Starter</td>
-</tr>
-
-<tr>
-<td>Strawberry</td>
-<td>Shop Rotation</td>
-<td>40</td>
-<td>Multi</td>
-<td>Frequent</td>
-</tr>
-
-<tr>
-<td>Blueberry</td>
-<td>Shop Rotation</td>
-<td>30</td>
-<td>Multi (2-3)</td>
-<td>Frequent</td>
-</tr>
-
-<tr>
-<td>Carrot</td>
-<td>Starter</td>
-<td>15</td>
-<td>Single</td>
-<td>Tutorial Crop</td>
-</tr>
-</tbody>
-</table>
+<div class="grid" id="plantGrid">
 
 <div class="card">
+<h3>Mushroom</h3>
+<p>Cost: 15,000</p>
+<p>Value: 11,732</p>
+<span class="badge">Rare</span>
+</div>
+
+<div class="card">
+<h3>Moon Bloom</h3>
+<p>Cost: 65,000,000</p>
+<p>Value: 8,122</p>
+<span class="badge">Ultra Rare</span>
+</div>
+
+<div class="card">
+<h3>Ghost Pepper</h3>
+<p>Cost: Pack RNG</p>
+<p>Value: 2,256</p>
+<span class="badge">Mythic</span>
+</div>
+
+<div class="card">
+<h3>Pineapple</h3>
+<p>Cost: 10,000</p>
+<p>Value: 60</p>
+<span class="badge">Common</span>
+</div>
+
+<div class="card">
+<h3>Cactus</h3>
+<p>Cost: 5,000</p>
+<p>Value: 50</p>
+<span class="badge">Common</span>
+</div>
+
+<div class="card">
+<h3>Corn</h3>
+<p>Cost: 2,500</p>
+<p>Value: 45</p>
+<span class="badge">Common</span>
+</div>
+
+</div>
+
+<div class="section">
 <h2>💰 Economy Formula</h2>
-<p>
-Your payout scales heavily with weight:
-</p>
-<br>
-<p>
-<b>Value ∝ Weight²·⁶⁵</b>
-</p>
-<br>
-<p>
-Weather mutations like Frozen and Stardust can massively increase profits.
-</p>
+<p>Value scales using: <b>Weight²·⁶⁵</b></p>
+<p>Weather mutations can massively increase profits.</p>
 </div>
 
-<div class="card">
-<h2>🏆 Best Farming Strategies</h2>
-
-<div class="strategy">
-
-<div class="strategy-box">
-<h3>Early Game</h3>
-<p>
-Start with Carrots and move into Bamboo.
-Wait for mutation weather events before selling.
-</p>
-</div>
-
-<div class="strategy-box">
-<h3>Passive Income</h3>
-<p>
-Use Ghost Pepper, Pineapple, and Cactus.
-Protect farms with walls and traps.
-</p>
-</div>
-
-<div class="strategy-box">
-<h3>Highest Value</h3>
-<p>
-Mushroom and Moon Bloom provide the best raw value if your farm is secure.
-</p>
-</div>
-
-</div>
+<div class="section">
+<h2>🏆 Strategy</h2>
+<p><b>Early Game:</b> Carrots → Bamboo</p>
+<p><b>Mid Game:</b> Multi-harvest crops</p>
+<p><b>Late Game:</b> Mushroom / Moon Bloom</p>
 </div>
 
 </div>
 
 <footer>
-Grow a Garden 2 Community Guide
+Grow a Garden 2 Wiki • Fan Made
 </footer>
 
 <script>
 const search = document.getElementById("search");
+const cards = document.querySelectorAll(".card");
 
-search.addEventListener("keyup", function(){
-    const filter = this.value.toLowerCase();
-    const rows = document.querySelectorAll("#catalog tbody tr");
+search.addEventListener("input", () => {
+    let value = search.value.toLowerCase();
 
-    rows.forEach(row=>{
-        row.style.display =
-        row.textContent.toLowerCase().includes(filter)
-        ? ""
+    cards.forEach(card => {
+        card.style.display =
+        card.innerText.toLowerCase().includes(value)
+        ? "block"
         : "none";
     });
 });
